@@ -11,7 +11,8 @@ export type Project = {
   tags: string[];
   summary: string;
   description: string;
-  image?: string;
+  image?: string; // card thumbnail
+  images?: string[]; // detail page gallery (2–3 images)
   links: { label: string; url: string }[];
   featured?: boolean;
   year: number;
@@ -31,6 +32,12 @@ Built from scratch with Next.js App Router, Tailwind CSS v4, and Framer Motion. 
 
 The design language uses a white/orange/black palette in light mode and its inverse in dark mode — minimal and clean, but with enough personality to stand out.`,
     year: 2026,
+    image: "/projects/portfolio-v3/thumb.jpg",
+    images: [
+      "/projects/portfolio-v3/1.jpg",
+      "/projects/portfolio-v3/2.jpg",
+      "/projects/portfolio-v3/3.jpg",
+    ],
     links: [
       { label: "View Live", url: "https://www.sambassong.com" },
       { label: "GitHub", url: "https://github.com" },
@@ -61,6 +68,12 @@ The frontend is built with Next.js 15, TypeScript, Tailwind CSS, and Shadcn UI, 
 
 The backend is a modular NestJS REST API and WebSocket server backed by MongoDB and Mongoose, organized around Domain-Driven Design principles. Key features include real-time private messaging via Socket.io, community groups and events with RSVP management, customizable user profiles, AWS S3 for avatar and banner uploads, and rate limiting via NestJS Throttler. End-to-end testing is handled with Cypress on the frontend and Jest on the backend.`,
     year: 2025,
+    image: "/projects/cf-platform/thumb.jpg",
+    images: [
+      "/projects/cf-platform/1.jpg",
+      "/projects/cf-platform/2.jpg",
+      "/projects/cf-platform/3.jpg",
+    ],
     links: [
       { label: "View Live", url: "https://cf-platform-frontend.vercel.app" },
       {
@@ -110,6 +123,12 @@ Built with Astro 5 for zero client-side JavaScript and fast static output. The s
 
 The site features a dynamic teaser section for their flagship series DLA, which adapts its UI based on production status (casting, post-production, or released). Images are processed at build time into WebP with responsive srcsets via Astro's image pipeline. Deployed on Cloudflare Pages with automatic Git-based deployments.`,
     year: 2026,
+    image: "/projects/fbb-studios/thumb.jpg",
+    images: [
+      "/projects/fbb-studios/1.jpg",
+      "/projects/fbb-studios/2.jpg",
+      "/projects/fbb-studios/3.jpg",
+    ],
     links: [
       { label: "View Live", url: "https://fbbstudios.com" },
       { label: "GitHub", url: "https://github.com/sbassong/fbb-studios" },
@@ -129,6 +148,12 @@ Originally bootstrapped with Create React App, this version was later migrated t
 
 This iteration served as the foundation for the design and content decisions that shaped Portfolio v3.`,
     year: 2024,
+    image: "/projects/portfolio-v2/thumb.jpg",
+    images: [
+      "/projects/portfolio-v2/1.jpg",
+      "/projects/portfolio-v2/2.jpg",
+      "/projects/portfolio-v2/3.jpg",
+    ],
     links: [
       { label: "View Live", url: "https://portfolio-2-vite.vercel.app" },
       { label: "GitHub", url: "https://github.com/sbassong/portfolio-2-vite" },
@@ -155,6 +180,12 @@ Built with the PERN stack (PostgreSQL, Express.js, React, Node.js), using Sequel
 
 Features include user auth, a browsable game catalog seeded with initial data, and a personal game library. The UI is built with Material UI (MUI), with UX touches like alerts and tooltips throughout. Deployed with the frontend on Vercel and the backend on Heroku.`,
     year: 2022,
+    image: "/projects/g-verse/thumb.jpg",
+    images: [
+      "/projects/g-verse/1.jpg",
+      "/projects/g-verse/2.jpg",
+      "/projects/g-verse/3.jpg",
+    ],
     links: [
       { label: "View Live", url: "https://g-verse-frontend.vercel.app" },
       { label: "GitHub", url: "https://github.com/sbassong/g-verse" },
@@ -174,6 +205,12 @@ The page features a full content layout including a hero section, illustrated ed
 
 Built without any JavaScript frameworks, the project demonstrates clean layout work with custom utility classes, responsive design, and close attention to typography and content hierarchy. Deployed via Vercel.`,
     year: 2022,
+    image: "/projects/agile-intensive-landing/thumb.jpg",
+    images: [
+      "/projects/agile-intensive-landing/1.jpg",
+      "/projects/agile-intensive-landing/2.jpg",
+      "/projects/agile-intensive-landing/3.jpg",
+    ],
     links: [
       { label: "View Live", url: "https://agile-intensive-landing.vercel.app" },
       {
@@ -195,6 +232,12 @@ The page dynamically surfaces the next upcoming event by reading from a JavaScri
 
 The repo also includes a standalone HTML email template (\`email.html\`) used for community communications to the "Leaders of Awesomeness" newsletter audience. Built with vanilla HTML, CSS, and JavaScript, and deployed via Vercel.`,
     year: 2022,
+    image: "/projects/uie2022/thumb.jpg",
+    images: [
+      "/projects/uie2022/1.jpg",
+      "/projects/uie2022/2.jpg",
+      "/projects/uie2022/3.jpg",
+    ],
     links: [
       { label: "View Live", url: "https://uie2022.vercel.app" },
       { label: "GitHub", url: "https://github.com/sbassong/uie2022" },

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
+import Carousel from "@/components/Carousel";
 
 const typeColors: Record<string, string> = {
   professional: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
@@ -119,6 +120,17 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
       </div>
+
+      {/* Gallery */}
+      {project.images && project.images.length > 0 && (
+        <>
+          <div className="h-px bg-[var(--border)] my-12" />
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-wider text-[var(--fg-muted)] mb-6">Gallery</h2>
+            <Carousel images={project.images} title={project.title} />
+          </div>
+        </>
+      )}
     </div>
   );
 }
