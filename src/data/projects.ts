@@ -222,5 +222,3 @@ export const projectTypes: { value: ProjectType | "all"; label: string }[] = [
   { value: "hobby", label: "Hobby" },
   { value: "freelance", label: "Freelance" },
 ];
-
-// claude --resume a0f1d2b6-3ef0-404b-807c-c7e89f687dd4

@@ -6,6 +6,7 @@ const skills = {
   Languages: ["TypeScript", "JavaScript", "Python", "SQL"],
   Frontend: [
     "React",
+    "React Native",
     "Next.js",
     "Tailwind CSS",
     "Vue",
