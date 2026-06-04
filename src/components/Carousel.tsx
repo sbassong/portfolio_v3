@@ -36,8 +36,8 @@ export default function Carousel({ images, title }: { images: string[]; title: s
 
   if (images.length === 1) {
     return (
-      <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--border)]">
-        <Image src={images[0]} alt={`${title} screenshot`} fill className="object-cover" sizes="(max-width: 896px) 100vw, 896px" />
+      <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--border)] bg-[var(--card)]">
+        <Image src={images[0]} alt={`${title} screenshot`} fill className="object-contain" sizes="(max-width: 896px) 100vw, 896px" />
       </div>
     );
   }
@@ -45,7 +45,7 @@ export default function Carousel({ images, title }: { images: string[]; title: s
   return (
     <div className="flex flex-col gap-4">
       {/* Main viewer */}
-      <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--border)] group">
+      <div className="relative aspect-video rounded-xl overflow-hidden border border-[var(--border)] bg-[var(--card)] group">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={index}
@@ -61,7 +61,7 @@ export default function Carousel({ images, title }: { images: string[]; title: s
               src={images[index]}
               alt={`${title} screenshot ${index + 1}`}
               fill
-              className="object-cover"
+              className="object-contain"
               sizes="(max-width: 896px) 100vw, 896px"
             />
           </motion.div>
