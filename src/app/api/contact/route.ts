@@ -1,4 +1,7 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
@@ -8,9 +11,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 
-    // TODO: wire up an email provider (Resend, SendGrid, etc.)
-    // For now, log to console in dev
-    console.log("Contact form submission:", { name, email, message });
+    await resend.emails.send({
+      from: "Portfolio Contact <onboarding@resend.dev>",
+      to: "sampromoemail@gmail.com",
+      subject: `New message from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+    });
 
     return NextResponse.json({ ok: true });
   } catch {
