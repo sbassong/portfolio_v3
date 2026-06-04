@@ -51,7 +51,7 @@ export default function ContactPage() {
 
           <div className="flex flex-col gap-5">
             <a
-              href="mailto:sampromoemail@gmail.com"
+              href="mailto:sam.bassong@gmail.com"
               className="flex items-center gap-4 group"
             >
               <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors shrink-0">
@@ -62,12 +62,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs text-[var(--fg-muted)] mb-0.5">Email</p>
-                <p className="text-sm font-medium group-hover:text-accent transition-colors">sampromoemail@gmail.com</p>
+                <p className="text-sm font-medium group-hover:text-accent transition-colors">sam.bassong@gmail.com</p>
               </div>
             </a>
 
             <a
-              href="https://github.com"
+              href="https://github.com/sbassong"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
@@ -79,12 +79,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs text-[var(--fg-muted)] mb-0.5">GitHub</p>
-                <p className="text-sm font-medium group-hover:text-accent transition-colors">github.com/sambassong</p>
+                <p className="text-sm font-medium group-hover:text-accent transition-colors">github.com/sbassong</p>
               </div>
             </a>
 
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/sambassong"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
