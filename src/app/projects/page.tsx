@@ -16,7 +16,7 @@ function ProjectsGrid() {
 
   const filtered = activeType === "all"
     ? projects
-    : projects.filter((p) => p.type === activeType);
+    : projects.filter((p) => p.type.includes(activeType));
 
   function setFilter(value: string) {
     const params = new URLSearchParams(searchParams.toString());

@@ -52,9 +52,11 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
       {/* Header */}
       <div className="mb-10">
         <div className="flex flex-wrap items-center gap-3 mb-5">
-          <span className={`text-xs font-medium px-2.5 py-1 rounded-full capitalize ${typeColors[project.type]}`}>
-            {project.type.replace("-", " ")}
-          </span>
+          {project.type.map((t) => (
+            <span key={t} className={`text-xs font-medium px-2.5 py-1 rounded-full capitalize ${typeColors[t]}`}>
+              {t.replace("-", " ")}
+            </span>
+          ))}
           <span className="text-xs font-mono text-[var(--fg-muted)]">{project.year}</span>
         </div>
 

@@ -3,7 +3,7 @@ export type ProjectType = "professional" | "hobby" | "freelance";
 export type Project = {
   slug: string;
   title: string;
-  type: ProjectType;
+  type: ProjectType[];
   tags: string[];
   summary: string;
   description: string;
@@ -18,7 +18,7 @@ export const projects: Project[] = [
   {
     slug: "cf-platform",
     title: "Child-Free Platform",
-    type: "hobby",
+    type: ["hobby", "freelance"],
     tags: [
       "Next.js",
       "TypeScript",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
   {
     slug: "fbb-studios",
     title: "FBB Studios",
-    type: "freelance",
+    type: ["freelance", "professional"],
     tags: ["Astro", "TypeScript", "CSS", "Cloudflare Pages", "i18n"],
     summary:
       "Marketing site for FBB Studios, a San Francisco-based Francophone film production house. Built with Astro 5, fully bilingual in French and English, and deployed on Cloudflare Pages.",
@@ -85,7 +85,7 @@ export const projects: Project[] = [
   {
     slug: "karta",
     title: "Karta",
-    type: "hobby",
+    type: ["hobby"],
     tags: [
       "React Native",
       "Expo",
@@ -114,7 +114,7 @@ export const projects: Project[] = [
   {
     slug: "agile-intensive-landing",
     title: "Agile Intensive Landing Page",
-    type: "freelance",
+    type: ["professional"],
     tags: ["HTML", "CSS", "Responsive Design"],
     summary:
       "A marketing landing page built for Center Centre's 'Taking Control of Agile UX' intensive program, led by UX expert Jared Spool.",
@@ -140,7 +140,7 @@ export const projects: Project[] = [
   {
     slug: "g-verse",
     title: "G-Verse",
-    type: "hobby",
+    type: ["hobby"],
     tags: [
       "React",
       "Node.js",
@@ -167,13 +167,13 @@ export const projects: Project[] = [
       { label: "View Live", url: "https://g-verse-frontend.vercel.app" },
       { label: "GitHub", url: "https://github.com/sbassong/g-verse" },
     ],
-    featured: true,
+
   },
 
   {
     slug: "portfolio-v2",
     title: "Portfolio v2",
-    type: "hobby",
+    type: ["hobby"],
     tags: ["React", "Vite", "JavaScript", "CSS"],
     summary:
       "The second iteration of my personal portfolio. Originally built with Create React App, then migrated to Vite for faster builds and a better dev experience.",
@@ -196,7 +196,7 @@ export const projects: Project[] = [
   {
     slug: "uie2022",
     title: "UIE 2022 Landing Page",
-    type: "freelance",
+    type: ["professional"],
     tags: ["HTML", "CSS", "JavaScript", "Airtable"],
     summary:
       "A dynamic landing page for UX expert Jared Spool's 2022 events, featuring a JavaScript-driven upcoming event display, an embedded Airtable contact form, and an HTML email template.",
