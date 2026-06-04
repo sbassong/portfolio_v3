@@ -47,8 +47,8 @@ export default function ResumePage() {
           <h1 className="text-5xl sm:text-6xl font-black tracking-tighter">Experience</h1>
         </div>
         <a
-          href="/resume.pdf"
-          download
+          href="/resume/SamuelBassong_Resume.pdf"
+          download="SamuelBassong_Resume.pdf"
           className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 border border-[var(--border)] rounded-lg text-sm font-medium hover:border-accent hover:text-accent transition-colors"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
