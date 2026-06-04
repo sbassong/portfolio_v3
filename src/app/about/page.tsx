@@ -1,15 +1,39 @@
+import Image from "next/image";
+import portrait from "../../../public/about/orange-jacket-portrait.jpeg";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const skills = {
-  "Frontend": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Vue.js"],
-  "Backend": ["Node.js", "Python", "FastAPI", "PostgreSQL", "Redis", "GraphQL"],
-  "Infrastructure": ["AWS", "Docker", "GitHub Actions", "Vercel", "Supabase"],
-  "Tools": ["Git", "Figma", "VS Code", "Linear", "Notion"],
+  Languages: ["TypeScript", "JavaScript", "Python", "SQL"],
+  Frontend: [
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+    "Vue",
+    "Mapbox GL JS",
+    "D3.js",
+  ],
+  Backend: [
+    "Node.js",
+    "Express.js",
+    "Flask",
+    "MongoDB",
+    "PostgreSQL",
+    "REST APIs",
+  ],
+  "Cloud & Tooling": [
+    "AWS",
+    "GitHub Actions",
+    "Docker",
+    "Jest",
+    "Cypress",
+    "Figma",
+  ],
 };
 
 export const metadata = {
   title: "About — Sam Bassong",
-  description: "Software engineer based in [city]. Building thoughtful digital products.",
+  description:
+    "Software engineer based in Seattle. Building accessible digital products.",
 };
 
 export default function AboutPage() {
@@ -17,10 +41,13 @@ export default function AboutPage() {
     <div className="max-w-6xl mx-auto px-6 py-16">
       {/* Header */}
       <AnimatedSection className="mb-16">
-        <p className="text-sm font-mono text-accent uppercase tracking-widest mb-3">About me</p>
-        <h1 className="text-5xl sm:text-6xl font-black tracking-tighter">
-          Building software<br />
-          <span className="text-accent">with purpose.</span>
+        <p className="text-sm font-mono text-accent uppercase tracking-widest mb-3">
+          About me
+        </p>
+        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter">
+          Lasting software
+          <br />
+          <span className="text-accent">built for people.</span>
         </h1>
       </AnimatedSection>
 
@@ -28,32 +55,40 @@ export default function AboutPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
         <AnimatedSection className="flex flex-col gap-5 text-[var(--fg-muted)] leading-relaxed">
           <p>
-            Hi, I&apos;m Sam — a software engineer passionate about building products that are both
-            functional and beautiful. I believe the best software is thoughtfully designed from
-            the API layer all the way to the pixel.
+            I&apos;m Sam, a software developer based in the Pacific Northwest.
+            My path here wasn't exactly linear. I spent years doing infectious
+            disease research and teaching middle school science before writing
+            my first lines of code on my 8th graders&apos; field trip to Amazon.
+            Within a year, I had taught myself enough to build a clunky
+            Jeopardy-style browser game for my students, completed a bootcamp,
+            and landed my first role in tech.
           </p>
           <p>
-            I&apos;ve worked across the full stack — from designing database schemas and building
-            REST and GraphQL APIs to crafting polished frontends with React and Next.js. I care
-            deeply about performance, accessibility, and developer experience.
+            Since then, I&apos;ve built production software across geospatial
+            platforms, sales tools, and enterprise applications, working mostly
+            in JavaScript, Python, React, Node, and AWS. Whether it&apos;s
+            accessible UIs, clean APIs, or scalable architecture, I care about
+            the details and enjoy building things that improve systems and make
+            life a little easier for the people using them.
           </p>
           <p>
-            When I&apos;m not writing code, I&apos;m experimenting with new technologies, contributing
-            to open-source projects, or thinking about what makes great software products tick.
+            These days I&apos;m a Lead Instructor at General Assembly, preparing
+            developers for the workforce while finishing a CS degree at Oregon
+            State. Outside of work, I&apos;m a devoted FC Barcelona supporter, a
+            certified butler to my two cats, and usually out exploring the PNW
+            or buried in fantasy fiction.
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={0.1}>
-          {/* Placeholder for photo */}
-          <div className="aspect-[4/5] max-w-sm rounded-2xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--fg-muted)]">
-            <div className="flex flex-col items-center gap-3">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-30">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <polyline points="21 15 16 10 5 21" />
-              </svg>
-              <span className="text-sm opacity-50">Photo coming soon</span>
-            </div>
+          <div className="relative aspect-[4/5] max-w-sm rounded-2xl overflow-hidden">
+            <Image
+              src={portrait}
+              alt="Sam Bassong"
+              fill
+              className="object-cover"
+              placeholder="blur"
+            />
           </div>
         </AnimatedSection>
       </div>
@@ -63,14 +98,20 @@ export default function AboutPage() {
 
       {/* Skills */}
       <AnimatedSection className="mb-4">
-        <p className="text-sm font-mono text-accent uppercase tracking-widest mb-3">Expertise</p>
-        <h2 className="text-4xl font-black tracking-tighter mb-12">Skills & tools</h2>
+        <p className="text-sm font-mono text-accent uppercase tracking-widest mb-3">
+          Expertise
+        </p>
+        <h2 className="text-4xl font-black tracking-tighter mb-12">
+          Skills & tools
+        </h2>
       </AnimatedSection>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {Object.entries(skills).map(([category, items], i) => (
           <AnimatedSection key={category} delay={i * 0.08}>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--fg-muted)] mb-4">{category}</h3>
+            <h3 className="text-sm font-bold uppercase tracking-wider text-[var(--fg-muted)] mb-4">
+              {category}
+            </h3>
             <div className="flex flex-col gap-2">
               {items.map((skill) => (
                 <div key={skill} className="flex items-center gap-2">

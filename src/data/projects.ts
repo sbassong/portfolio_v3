@@ -66,7 +66,7 @@ export const projects: Project[] = [
     summary:
       "Marketing site for FBB Studios, a San Francisco-based Francophone film production house. Built with Astro 5, fully bilingual in French and English, and deployed on Cloudflare Pages.",
     description: `A production-ready marketing site built for FBB Studios, a San Francisco-based Francophone film production house with roots in Cameroon.
-      Built with Astro 5 for zero client-side JavaScript and fast static output. The site is fully bilingual — French as the default locale (\`/\`) and English at \`/en/\` — using Astro's built-in i18n system with hreflang alternates for SEO. All copy is managed through JSON content collections, meaning the client can update text without touching code. The site features a dynamic teaser section for their flagship series DLA, which adapts its UI based on production status (casting, post-production, or released). Images are processed at build time into WebP with responsive srcsets via Astro's image pipeline. Deployed on Cloudflare Pages with automatic Git-based deployments.`,
+      Built with Astro 5 for zero client-side JavaScript and fast static output. The site is fully bilingual, feauring French as the default locale (\`/\`) and English at \`/en/\`, while using Astro's built-in i18n system with hreflang alternates for SEO. All copy is managed through JSON content collections, meaning the client can update text without touching code. Images are processed at build time into WebP with responsive srcsets via Astro's image pipeline. Deployed on Cloudflare Pages.`,
     year: 2026,
     image: "/projects/fbb-studios/thumb.png",
     images: [
@@ -96,9 +96,9 @@ export const projects: Project[] = [
     ],
     summary:
       "A geospatial, community-sourced mobile app for improving access to essential services in rural areas. Built with React Native and Expo, backed by a distributed microservices architecture.",
-    description: `Karta is a cross-platform mobile application designed to bridge the information gap in rural communities by mapping the locations of essential services — healthcare facilities, water sources, and educational institutions.
+    description: `Karta is a cross-platform mobile application designed to bridge the information gap in rural communities by mapping the locations of essential services, including healthcare facilities, water sources, and educational institutions.
       The frontend is built with React Native and Expo, using MapLibre for performant vector-based interactive maps and Firebase Cloud Messaging for real-time push notifications. Users can contribute by uploading photos of locations directly from their device camera or gallery, with authentication backed by secure token storage via Expo Secure Store.
-      The app is the client for a distributed microservices backend, with five dedicated services handling auth (JWT), push notifications, image processing and storage, user reporting, and points-of-interest data — all deployed independently on Vercel.`,
+      The app is the client for a distributed microservices backend, with five dedicated services handling auth (JWT), push notifications, image processing and storage, user reporting, and points-of-interest data. All are deployed independently on Vercel.`,
     year: 2025,
     image: "/projects/karta/thumb.png",
     images: [
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     summary:
       "A marketing landing page built for Center Centre's 'Taking Control of Agile UX' intensive program, led by UX expert Jared Spool.",
     description: `A responsive landing page designed and built for Center Centre's UX education program, promoting a 5-day live intensive on integrating Agile and UX practices.
-      The page features a full content layout including a hero section, illustrated editorial sections, a structured daily curriculum, speaker bio, and a sticky call-to-action — all hand-coded in semantic HTML and CSS.
+      The page features a full content layout including a hero section, illustrated editorial sections, a structured daily curriculum, speaker bio, and a sticky call-to-action, all hand-coded in semantic HTML and CSS.
       Built without any JavaScript frameworks, the project demonstrates clean layout work with custom utility classes, responsive design, and close attention to typography and content hierarchy. Deployed via Vercel.`,
     year: 2022,
     image: "/projects/agile-intensive-landing/thumb.png",
@@ -154,8 +154,8 @@ export const projects: Project[] = [
     summary:
       "A full-stack game library app where enthusiasts can browse games and manage a personal collection. Built with the PERN stack and JWT auth.",
     description: `G-Verse is a fully functional full-stack application for game enthusiasts to browse games, manage their account, and curate a personal library of favorites.
-      Built with the PERN stack (PostgreSQL, Express.js, React, Node.js), using Sequelize as the ORM for database management and JSON Web Tokens for authentication and authorization.
-      Features include user auth, a browsable game catalog seeded with initial data, and a personal game library. The UI is built with Material UI (MUI), with UX touches like alerts and tooltips throughout. Deployed with the frontend on Vercel and the backend on Heroku.`,
+      Built with the PERN stack (PostgreSQL, Express.js, React, Node.js), using JSON Web Tokens for authentication and authorization.
+      Features include user auth, a browsable game catalog seeded with initial data, and a personal game library. The UI is built with Material UI (MUI), with UX touches like alerts and tooltips throughout. Deployed on Vercel with data served from Supabase.`,
     year: 2023,
     image: "/projects/g-verse/thumb.png",
     images: [
@@ -178,8 +178,7 @@ export const projects: Project[] = [
     summary:
       "The second iteration of my personal portfolio. Originally built with Create React App, then migrated to Vite for faster builds and a better dev experience.",
     description: `The second version of my personal portfolio website, showcasing my projects and skills as a full-stack developer.
-      Originally bootstrapped with Create React App, this version was later migrated to Vite (v2.1) for significantly faster build times and an improved developer experience. Built with React and vanilla CSS, and deployed on Vercel.
-      This iteration served as the foundation for the design and content decisions that shaped Portfolio v3.`,
+      Originally bootstrapped with Create React App, this version was later migrated to Vite (v2.1) for significantly faster build times and an improved developer experience. Built with React and vanilla CSS, and deployed on Vercel.`,
     year: 2024,
     image: "/projects/portfolio-v2/thumb.png",
     images: [
@@ -223,3 +222,5 @@ export const projectTypes: { value: ProjectType | "all"; label: string }[] = [
   { value: "hobby", label: "Hobby" },
   { value: "freelance", label: "Freelance" },
 ];
+
+// claude --resume a0f1d2b6-3ef0-404b-807c-c7e89f687dd4
