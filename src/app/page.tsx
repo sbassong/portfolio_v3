@@ -37,7 +37,10 @@ export default function Home() {
             animate="show"
             className="flex flex-col gap-6"
           >
-            <motion.p variants={item} className="text-sm font-mono text-accent tracking-widest uppercase">
+            <motion.p
+              variants={item}
+              className="text-sm font-mono text-accent tracking-widest uppercase"
+            >
               Available for work
             </motion.p>
 
@@ -45,7 +48,8 @@ export default function Home() {
               variants={item}
               className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none tracking-tighter"
             >
-              Sam<br />
+              Sam
+              <br />
               <span className="relative inline-block">
                 Bassong
                 <motion.span
@@ -61,9 +65,9 @@ export default function Home() {
               variants={item}
               className="text-lg sm:text-xl text-[var(--fg-muted)] max-w-xl leading-relaxed"
             >
-              Software engineer building thoughtful digital products.
-              I care about clean code, great UX, and the details that make
-              the difference.
+              Software developer building thoughtful, accessible digital
+              products. I care about maintainable systems, intuitive UX, and the
+              details that make the difference.
             </motion.p>
 
             <motion.div variants={item} className="flex flex-wrap gap-4 pt-2">
@@ -72,7 +76,16 @@ export default function Home() {
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors text-sm"
               >
                 View my work
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
@@ -92,15 +105,28 @@ export default function Home() {
       <section className="max-w-6xl mx-auto px-6 py-24">
         <AnimatedSection className="flex items-end justify-between mb-12 gap-4">
           <div>
-            <p className="text-sm font-mono text-accent mb-2 uppercase tracking-widest">Selected work</p>
-            <h2 className="text-4xl sm:text-5xl font-black tracking-tighter">Featured projects</h2>
+            <p className="text-sm font-mono text-accent mb-2 uppercase tracking-widest">
+              Selected work
+            </p>
+            <h2 className="text-4xl sm:text-5xl font-black tracking-tighter">
+              Featured projects
+            </h2>
           </div>
           <Link
             href="/projects"
             className="shrink-0 text-sm font-medium text-[var(--fg-muted)] hover:text-accent transition-colors flex items-center gap-1"
           >
             View all
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
@@ -120,15 +146,18 @@ export default function Home() {
       <AnimatedSection>
         <section className="max-w-6xl mx-auto px-6 pb-24">
           <div className="rounded-2xl border border-[var(--border)] bg-[var(--card)] p-12 text-center flex flex-col items-center gap-6">
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter">Let&apos;s build something great</h2>
+            <h2 className="text-3xl sm:text-4xl font-black tracking-tighter">
+              Thoughtful collaboration builds better products
+            </h2>
             <p className="text-[var(--fg-muted)] max-w-md">
-              I&apos;m currently open to new opportunities. If you have a project in mind, I&apos;d love to hear about it.
+              Have a project or opportunity in mind? I&apos;d love to hear about
+              it.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-8 py-3.5 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
             >
-              Say hello
+              Let's talk
             </Link>
           </div>
         </section>
