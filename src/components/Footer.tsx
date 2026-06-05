@@ -7,7 +7,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com"
+            href="https://github.com/sbassong"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -18,7 +18,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://linkedin.com/in/sambassong"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -29,7 +29,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="mailto:sampromoemail@gmail.com"
+            href="mailto:sam.bassong@gmail.com"
             aria-label="Email"
             className="text-[var(--fg-muted)] hover:text-accent transition-colors"
           >
