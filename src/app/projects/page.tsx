@@ -36,6 +36,7 @@ function ProjectsGrid() {
           <button
             key={value}
             onClick={() => setFilter(value)}
+            aria-pressed={activeType === value}
             className={`relative px-4 py-1.5 rounded-full text-sm font-medium transition-colors cursor-pointer ${
               activeType === value
                 ? "bg-accent text-white"

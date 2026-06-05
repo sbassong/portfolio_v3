@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
 const links = [
@@ -16,9 +16,14 @@ const links = [
 function NavLink({ href, label }: { href: string; label: string }) {
   const pathname = usePathname();
   const isActive = pathname === href;
+  const prefersReduced = useReducedMotion();
 
   return (
-    <Link href={href} className="relative group text-sm font-medium py-1">
+    <Link
+      href={href}
+      aria-current={isActive ? "page" : undefined}
+      className="relative group text-sm font-medium py-1"
+    >
       <span className={isActive ? "text-accent" : "text-[var(--fg-muted)] group-hover:text-[var(--fg)] transition-colors"}>
         {label}
       </span>
@@ -27,7 +32,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
         initial={{ scaleX: 0 }}
         animate={{ scaleX: isActive ? 1 : 0 }}
         whileHover={{ scaleX: 1 }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: prefersReduced ? 0 : 0.2 }}
         style={{ originX: 0, width: "100%" }}
       />
     </Link>
@@ -36,6 +41,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const prefersReduced = useReducedMotion();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] backdrop-blur-md bg-[var(--bg)]/80 transition-colors">
@@ -56,6 +62,8 @@ export default function Navbar() {
           <button
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
             className="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-[var(--border)] transition-colors cursor-pointer"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -64,15 +72,15 @@ export default function Navbar() {
                 initial={{ rotate: -90, opacity: 0 }}
                 animate={{ rotate: 0, opacity: 1 }}
                 exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.15 }}
+                transition={{ duration: prefersReduced ? 0 : 0.15 }}
               >
                 {menuOpen ? (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                     <line x1="18" y1="6" x2="6" y2="18" />
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
                 ) : (
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <svg aria-hidden="true" focusable="false" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
                     <line x1="3" y1="6" x2="21" y2="6" />
                     <line x1="3" y1="12" x2="21" y2="12" />
                     <line x1="3" y1="18" x2="21" y2="18" />
@@ -87,10 +95,11 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: prefersReduced ? 0 : 0.2 }}
             className="md:hidden border-t border-[var(--border)] bg-[var(--bg)] overflow-hidden"
           >
             <div className="flex flex-col px-6 py-4 gap-4">

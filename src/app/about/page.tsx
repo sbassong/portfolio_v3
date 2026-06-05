@@ -87,6 +87,7 @@ export default function AboutPage() {
               src={portrait}
               alt="Sam Bassong"
               fill
+              sizes="(max-width: 640px) 100vw, 384px"
               className="object-cover"
               placeholder="blur"
             />

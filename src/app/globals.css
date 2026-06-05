@@ -12,7 +12,7 @@
 :root {
   --bg: #ffffff;
   --fg: #0a0a0a;
-  --fg-muted: #6b7280;
+  --fg-muted: #4b5563;
   --border: #e5e7eb;
   --card: #f9fafb;
 }
@@ -58,4 +58,40 @@ body {
 
 @keyframes blink {
   50% { opacity: 0; }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: #f97316;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 6px 6px;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Global focus indicator */
+:focus-visible {
+  outline: 2px solid #f97316;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
