@@ -20,12 +20,14 @@ export const metadata: Metadata = {
   title: "Sam Bassong — Software Developer",
   description: "Portfolio of Sam Bassong — software developer building thoughtful digital products.",
   authors: [{ name: "Sam Bassong", url: "https://sambassong.com" }],
+  robots: { index: true, follow: true },
   openGraph: {
     type: "website",
     url: "https://sambassong.com",
     siteName: "Sam Bassong",
     title: "Sam Bassong — Software Developer",
     description: "Portfolio of Sam Bassong — software developer building thoughtful digital products.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",

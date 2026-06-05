@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
+import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/config/constants";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
@@ -53,7 +54,7 @@ export default function ContactPage() {
 
           <div className="flex flex-col gap-5">
             <a
-              href="mailto:sam.bassong@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="flex items-center gap-4 group"
             >
               <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-colors shrink-0">
@@ -64,12 +65,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs text-[var(--fg-muted)] mb-0.5">Email</p>
-                <p className="text-sm font-medium group-hover:text-accent transition-colors">sam.bassong@gmail.com</p>
+                <p className="text-sm font-medium group-hover:text-accent transition-colors">{CONTACT_EMAIL}</p>
               </div>
             </a>
 
             <a
-              href="https://github.com/sbassong"
+              href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
@@ -81,12 +82,12 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs text-[var(--fg-muted)] mb-0.5">GitHub</p>
-                <p className="text-sm font-medium group-hover:text-accent transition-colors">github.com/sbassong</p>
+                <p className="text-sm font-medium group-hover:text-accent transition-colors">{SOCIAL_LINKS.github.replace("https://", "")}</p>
               </div>
             </a>
 
             <a
-              href="https://linkedin.com/in/sambassong"
+              href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 group"
@@ -98,7 +99,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs text-[var(--fg-muted)] mb-0.5">LinkedIn</p>
-                <p className="text-sm font-medium group-hover:text-accent transition-colors">linkedin.com/in/sambassong</p>
+                <p className="text-sm font-medium group-hover:text-accent transition-colors">{SOCIAL_LINKS.linkedin.replace("https://", "")}</p>
               </div>
             </a>
           </div>

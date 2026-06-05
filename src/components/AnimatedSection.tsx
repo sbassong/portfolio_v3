@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { type ReactNode, useState, useEffect } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { type ReactNode } from "react";
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -10,15 +10,7 @@ interface AnimatedSectionProps {
 }
 
 export default function AnimatedSection({ children, className, delay = 0 }: AnimatedSectionProps) {
-  const [prefersReduced, setPrefersReduced] = useState(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setPrefersReduced(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setPrefersReduced(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
+  const prefersReduced = useReducedMotion();
 
   return (
     <motion.div

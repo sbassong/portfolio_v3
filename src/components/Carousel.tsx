@@ -102,6 +102,7 @@ export default function Carousel({ images, title }: { images: string[]; title: s
             key={i}
             onClick={() => go(i)}
             aria-label={`Go to image ${i + 1}`}
+            aria-current={i === index ? "true" : undefined}
             className={`rounded-full transition-all duration-200 cursor-pointer ${
               i === index
                 ? "w-5 h-2 bg-accent"

@@ -1,35 +1,7 @@
 import Image from "next/image";
 import portrait from "../../../public/about/orange-jacket-portrait.jpeg";
 import AnimatedSection from "@/components/AnimatedSection";
-
-const skills = {
-  Languages: ["TypeScript", "JavaScript", "Python", "SQL"],
-  Frontend: [
-    "React",
-    "React Native",
-    "Next.js",
-    "Tailwind CSS",
-    "Vue",
-    "Mapbox GL JS",
-    "D3.js",
-  ],
-  Backend: [
-    "Node.js",
-    "Express.js",
-    "Flask",
-    "MongoDB",
-    "PostgreSQL",
-    "REST APIs",
-  ],
-  "Cloud & Tooling": [
-    "AWS",
-    "GitHub Actions",
-    "Docker",
-    "Jest",
-    "Cypress",
-    "Figma",
-  ],
-};
+import { skills } from "@/data/resume";
 
 export const metadata = {
   title: "About — Sam Bassong",
@@ -57,7 +29,7 @@ export default function AboutPage() {
         <AnimatedSection className="flex flex-col gap-5 text-[var(--fg-muted)] leading-relaxed">
           <p>
             I&apos;m Sam, a software developer based in the Pacific Northwest.
-            My path here wasn't exactly linear. I spent years doing infectious
+            My path here wasn&apos;t exactly linear. I spent years doing infectious
             disease research and teaching middle school science before writing
             my first lines of code on my 8th graders&apos; field trip to Amazon.
             Within a year, I had taught myself enough to build a clunky

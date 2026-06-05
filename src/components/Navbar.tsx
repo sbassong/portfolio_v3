@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
@@ -42,6 +42,14 @@ function NavLink({ href, label }: { href: string; label: string }) {
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const prefersReduced = useReducedMotion();
+
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === "Escape") setMenuOpen(false);
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] backdrop-blur-md bg-[var(--bg)]/80 transition-colors">

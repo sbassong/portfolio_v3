@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL, SOCIAL_LINKS } from "@/config/constants";
+
 export default function Footer() {
   return (
     <footer className="border-t border-[var(--border)] mt-auto">
@@ -7,7 +9,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-5">
           <a
-            href="https://github.com/sbassong"
+            href={SOCIAL_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
@@ -18,7 +20,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/sambassong"
+            href={SOCIAL_LINKS.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -29,7 +31,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="mailto:sam.bassong@gmail.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             aria-label="Email"
             className="text-[var(--fg-muted)] hover:text-accent transition-colors"
           >

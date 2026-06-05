@@ -74,7 +74,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               )}
             </div>
 
-            <div className="flex items-center gap-1 text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="flex items-center gap-1 text-accent text-sm font-medium opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
               View project
               <svg aria-hidden="true" focusable="false" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" />
