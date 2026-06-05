@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
@@ -16,8 +16,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sam Bassong — Software Engineer",
-  description: "Portfolio of Sam Bassong — software engineer building thoughtful digital products.",
+  metadataBase: new URL("https://sambassong.com"),
+  title: "Sam Bassong — Software Developer",
+  description: "Portfolio of Sam Bassong — software developer building thoughtful digital products.",
+  authors: [{ name: "Sam Bassong", url: "https://sambassong.com" }],
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: "website",
+    url: "https://sambassong.com",
+    siteName: "Sam Bassong",
+    title: "Sam Bassong — Software Developer",
+    description: "Portfolio of Sam Bassong — software developer building thoughtful digital products.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sam Bassong — Software Developer",
+    description: "Portfolio of Sam Bassong — software developer building thoughtful digital products.",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
 };
 
 export default function RootLayout({
@@ -32,9 +52,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="min-h-screen flex flex-col antialiased">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Providers>
           <Navbar />
-          <main className="flex-1 pt-16">{children}</main>
+          <main id="main-content" className="flex-1 pt-16">{children}</main>
           <Footer />
         </Providers>
       </body>
